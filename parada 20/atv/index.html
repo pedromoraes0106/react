@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        class Veiculo
+        {
+            constructor(modelo)
+            {
+                this.modelo= modelo;
+                this.marca= '';
+            }
+
+            set montadora(marca)
+            {
+                this.marca= marca;
+            }
+
+            get montadora()
+            {
+                console.log(`O veiculo ${this.modelo} é da marca ${this.marca}`); // Exibe a mensagem no menu
+                alert(`O veiculo ${this.modelo} é da marca ${this.marca}`); // Cria um pop-up
+            }
+        }
+
+        var ninja = new Veiculo('Ninja'); // Define o objeto
+        ninja.montadora = 'Kawasaki'; // Define (set) um valor do objeto
+        ninja.montadora; // Pega (get) um valor do objeto
+
+        class Factor extends Veiculo
+        {
+            info()
+            {
+                super.montadora;
+                console.log("isso é uma moto");
+            }
+        }
+
+        var factor = new Factor('factor 150');
+        factor.montadora = 'Yamaha';
+        factor.info();
+    </script>
+    
+</body>
+</html>
